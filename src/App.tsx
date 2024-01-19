@@ -13,13 +13,13 @@ function App() {
   }, [list]);
 
   useEffect(() => {
-    setList(JSON.parse(localStorage.getItem("list") || "") || []);
+    setList(JSON.parse(localStorage.getItem("list") || "[]") || []);
   }, []);
 
   return (
     <div style={{height: "100vh", width: "100vw", display: "flex", justifyContent: "center", flexDirection: "row", overflow: "clip"}}>
 
-      <div style={{maxHeight: "calc(100% - 300px)", height: "calc(100% - 300px)", overflow: "scroll", position: "relative", margin: "50px 0 50px", backgroundColor: "#111111", padding: "50px" }}>
+      <div style={{maxHeight: "calc(100% - 300px)", height: "calc(100% - 300px)", overflow: "scroll", position: "relative", margin: "50px 0 50px", backgroundColor: "#111111", padding: "30px", minWidth: "calc(100% - 150px)"}}>
         {
           list.map((item, i) => {
             return <div style={{color: i === 0 ? "#6666ff" : "#ffffff"}} key={i}>{item}</div>;
